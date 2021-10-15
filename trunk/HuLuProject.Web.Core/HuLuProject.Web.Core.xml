@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HuLuProject.Web.Core</name>
+    </assembly>
+    <members>
+        <member name="T:HuLuProject.Web.Core.Filter.GlobalFilter">
+            <summary>
+            全局过滤器
+            </summary>
+        </member>
+        <member name="T:HuLuProject.Web.Core.JwtHandler">
+            <summary>
+            jwt授权实现
+            </summary>
+        </member>
+        <member name="M:HuLuProject.Web.Core.JwtHandler.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)">
+            <summary>
+             添加自动刷新token逻辑
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

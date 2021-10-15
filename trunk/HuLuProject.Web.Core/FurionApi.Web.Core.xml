@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FurionApi.Web.Core</name>
+    </assembly>
+    <members>
+        <member name="T:FurionApi.Web.Core.Filter.GlobalFilter">
+            <summary>
+            全局过滤器
+            </summary>
+        </member>
+    </members>
+</doc>

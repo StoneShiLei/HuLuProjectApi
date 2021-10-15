@@ -1,0 +1,37 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hulu-project-api
+  namespace: default
+  labels:
+    app: project-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-api
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: project-api
+    spec:
+      volumes:
+        - name: hulu-api-settings
+          configMap:
+            name: hulu-project-api
+            defaultMode: 420
+      containers:
+        - name: hulu-project-api
+          image: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:{{.image_tag}}
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          volumeMounts:
+            - name: hulu-api-settings
+              readOnly: true
+              mountPath: /app/appsettings.json
+              subPath: appsettings.json
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent

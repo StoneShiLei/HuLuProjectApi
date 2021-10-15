@@ -1,0 +1,85 @@
+﻿# ---
+# kind: pipeline
+# type: kubernetes
+# name: test1
+# clone:
+#   disable: true
+# steps:
+# - name: test
+#   image: plugins/docker
+#   environment:
+#     KUBECONFIG: 
+#       from_secret: kubeconfig
+#     TEST: ddd
+#     USERNAME:
+#       from_secret: username
+#     PASSWORD:
+#       from_secret: password
+#   commands:
+#   - echo $USERNAME
+#   - echo $PASSWORD
+#   - docker login --username=$USERNAME registry.cn-shanghai.aliyuncs.com --password=$PASSWORD
+
+
+---
+kind: pipeline
+type: kubernetes
+name: hulu-project
+
+# clone:
+#   disable: true
+
+steps:
+# - name: clone
+#   image: alpine/git
+#   commands:
+#   - git config --global http.version HTTP/1.1
+#   - git clone https://github.com/StoneShiLei/HuLuProject.git .
+  # - git checkout $DRONE_COMMIT
+
+- name: docker-api
+  depends_on: [clone]
+  image: plugins/docker
+  settings:
+    mirror: https://jnyis2wm.mirror.aliyuncs.com
+    username:
+      from_secret: username
+    password:
+      from_secret: password
+    # repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
+    repo: registry.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
+    registry: registry.cn-shanghai.aliyuncs.com
+    tags:
+      - latest
+      - ${DRONE_COMMIT}
+
+- name: dron8s-api
+  depends_on: [docker-api]
+  image: bh90210/dron8s:latest
+  settings:
+    yaml: ./deploy.yaml
+    # variables. Must be lowercase, Usage: {{.image_tag}}
+    image_tag: ${DRONE_COMMIT}
+    kubeconfig:
+        from_secret: kubeconfig
+
+---
+kind: secret
+name: username
+get:
+  path: docker-secret
+  name: DOCKER_USERNAME
+
+---
+kind: secret
+name: password
+get:
+  path: docker-secret
+  name: DOCKER_PASSWORD
+
+---
+kind: secret
+name: kubeconfig
+get:
+  path: kubeconfig
+  name: KUBECONFIG

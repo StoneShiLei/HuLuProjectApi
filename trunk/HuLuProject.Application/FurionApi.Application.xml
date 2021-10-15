@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FurionApi.Application</name>
+    </assembly>
+    <members>
+        <member name="F:FurionApi.Application.Config.MemoryCacheKey.DemoKey">
+            <summary>
+            demo缓存key
+            </summary>
+        </member>
+        <member name="F:FurionApi.Application.Config.RedisCacheKey.DemoKey">
+            <summary>
+            demo缓存key
+            </summary>
+        </member>
+        <member name="T:FurionApi.Application.Services.DemoService.DemoService">
+            <summary>
+            demo
+            </summary>
+        </member>
+        <member name="M:FurionApi.Application.Services.DemoService.DemoService.GetDemoList(System.Int32,System.Int32)">
+            <summary>
+            获取demo的list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FurionApi.Application.Services.DemoService.DemoService.AddDemo(FurionApi.Application.Services.DemoService.Dtos.DemoInput)">
+            <summary>
+            添加demo
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FurionApi.Application.Services.DemoService.Dtos.DemoInput">
+            <summary>
+            demo
+            </summary>
+        </member>
+        <member name="P:FurionApi.Application.Services.DemoService.Dtos.DemoInput.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="T:FurionApi.Application.Services.DemoService.Dtos.DemoOutput">
+            <summary>
+            demo
+            </summary>
+        </member>
+        <member name="P:FurionApi.Application.Services.DemoService.Dtos.DemoOutput.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+    </members>
+</doc>

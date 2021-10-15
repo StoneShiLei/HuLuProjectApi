@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<version>2.16.7</version>
+		<Description>让 .NET 开发更简单，更通用，更流行。</Description>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="UnifyResult\Extensions\Options\**" />
+	  <EmbeddedResource Remove="UnifyResult\Extensions\Options\**" />
+	  <None Remove="UnifyResult\Extensions\Options\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="SpecificationDocument\Assets\index-mini-profiler.html" />
+		<None Remove="SpecificationDocument\Assets\index.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="SpecificationDocument\Assets\index-mini-profiler.html" />
+		<EmbeddedResource Include="SpecificationDocument\Assets\index.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="5.0.1" />
+		<PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.1.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Furion.Extras.DependencyModel.CodeAnalysis\Furion.Extras.DependencyModel.CodeAnalysis.csproj" />
+	</ItemGroup>
+
+</Project>

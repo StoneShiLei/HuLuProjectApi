@@ -1,0 +1,108 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furion", "Furion\Furion.csproj", "{00DA7B74-EEF9-48EC-A0E3-65DD435A5C57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furion.Extras.Authentication.JwtBearer", "Furion.Extras.Authentication.JwtBearer\Furion.Extras.Authentication.JwtBearer.csproj", "{1703BEF9-277D-452A-9009-CCB06BA5BC73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furion.Extras.DatabaseAccessor.FreeSql", "Furion.Extras.DatabaseAccessor.FreeSql\Furion.Extras.DatabaseAccessor.FreeSql.csproj", "{CBDBB5C5-6193-401C-8679-C00FBF50F850}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furion.Extras.DatabaseAccessor.MongoDB", "Furion.Extras.DatabaseAccessor.MongoDB\Furion.Extras.DatabaseAccessor.MongoDB.csproj", "{3B0B0142-B7A9-48A2-8004-064A3974AFF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furion.Extras.DependencyModel.CodeAnalysis", "Furion.Extras.DependencyModel.CodeAnalysis\Furion.Extras.DependencyModel.CodeAnalysis.csproj", "{23288675-BC17-4BB1-9355-17246FF3E8B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furion.Extras.Logging.Serilog", "Furion.Extras.Logging.Serilog\Furion.Extras.Logging.Serilog.csproj", "{6629123E-176D-4646-BE4A-10F70A814F87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Furion.Extras.ObjectMapper.Mapster", "Furion.Extras.ObjectMapper.Mapster\Furion.Extras.ObjectMapper.Mapster.csproj", "{856FD21A-1552-4243-85E7-88D146D1330B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuLuProject.Application", "HuLuProject.Application\HuLuProject.Application.csproj", "{E347DEBB-6E9C-4338-8709-9199343D030F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuLuProject.Core", "HuLuProject.Core\HuLuProject.Core.csproj", "{E324CA37-9C6B-4A52-988F-15B34F07B63A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuLuProject.Web.Core", "HuLuProject.Web.Core\HuLuProject.Web.Core.csproj", "{E29D3D1F-9EE1-4531-9426-0AA28E97D1F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuLuProject.Web.Api", "HuLuProject.Web.Entry\HuLuProject.Web.Api.csproj", "{03F7166B-BF41-4D97-92B9-7CC9D338824B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Frame", "0-Frame", "{6A754335-CBCB-46A3-9A03-9F76F250DA51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Core", "1-Core", "{C43F5522-4590-4585-93E3-083E3211DE9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Application", "{C5356F71-A0AF-4979-B2C8-84C54F07A132}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-WebCore", "3-WebCore", "{95BBE1DA-FF80-4A7C-A19B-FA7BC8A0A40D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Entry", "4-Entry", "{36F9043C-A575-45B6-AB76-BEEA835B7356}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00DA7B74-EEF9-48EC-A0E3-65DD435A5C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DA7B74-EEF9-48EC-A0E3-65DD435A5C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DA7B74-EEF9-48EC-A0E3-65DD435A5C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DA7B74-EEF9-48EC-A0E3-65DD435A5C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1703BEF9-277D-452A-9009-CCB06BA5BC73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1703BEF9-277D-452A-9009-CCB06BA5BC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1703BEF9-277D-452A-9009-CCB06BA5BC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1703BEF9-277D-452A-9009-CCB06BA5BC73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBDBB5C5-6193-401C-8679-C00FBF50F850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBDBB5C5-6193-401C-8679-C00FBF50F850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBDBB5C5-6193-401C-8679-C00FBF50F850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBDBB5C5-6193-401C-8679-C00FBF50F850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0B0142-B7A9-48A2-8004-064A3974AFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0B0142-B7A9-48A2-8004-064A3974AFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0B0142-B7A9-48A2-8004-064A3974AFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0B0142-B7A9-48A2-8004-064A3974AFF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23288675-BC17-4BB1-9355-17246FF3E8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23288675-BC17-4BB1-9355-17246FF3E8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23288675-BC17-4BB1-9355-17246FF3E8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23288675-BC17-4BB1-9355-17246FF3E8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6629123E-176D-4646-BE4A-10F70A814F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6629123E-176D-4646-BE4A-10F70A814F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6629123E-176D-4646-BE4A-10F70A814F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6629123E-176D-4646-BE4A-10F70A814F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{856FD21A-1552-4243-85E7-88D146D1330B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856FD21A-1552-4243-85E7-88D146D1330B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856FD21A-1552-4243-85E7-88D146D1330B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856FD21A-1552-4243-85E7-88D146D1330B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E347DEBB-6E9C-4338-8709-9199343D030F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E347DEBB-6E9C-4338-8709-9199343D030F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E347DEBB-6E9C-4338-8709-9199343D030F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E347DEBB-6E9C-4338-8709-9199343D030F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E324CA37-9C6B-4A52-988F-15B34F07B63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E324CA37-9C6B-4A52-988F-15B34F07B63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E324CA37-9C6B-4A52-988F-15B34F07B63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E324CA37-9C6B-4A52-988F-15B34F07B63A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29D3D1F-9EE1-4531-9426-0AA28E97D1F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29D3D1F-9EE1-4531-9426-0AA28E97D1F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29D3D1F-9EE1-4531-9426-0AA28E97D1F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29D3D1F-9EE1-4531-9426-0AA28E97D1F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F7166B-BF41-4D97-92B9-7CC9D338824B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F7166B-BF41-4D97-92B9-7CC9D338824B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F7166B-BF41-4D97-92B9-7CC9D338824B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F7166B-BF41-4D97-92B9-7CC9D338824B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{00DA7B74-EEF9-48EC-A0E3-65DD435A5C57} = {6A754335-CBCB-46A3-9A03-9F76F250DA51}
+		{1703BEF9-277D-452A-9009-CCB06BA5BC73} = {6A754335-CBCB-46A3-9A03-9F76F250DA51}
+		{CBDBB5C5-6193-401C-8679-C00FBF50F850} = {6A754335-CBCB-46A3-9A03-9F76F250DA51}
+		{3B0B0142-B7A9-48A2-8004-064A3974AFF2} = {6A754335-CBCB-46A3-9A03-9F76F250DA51}
+		{23288675-BC17-4BB1-9355-17246FF3E8B5} = {6A754335-CBCB-46A3-9A03-9F76F250DA51}
+		{6629123E-176D-4646-BE4A-10F70A814F87} = {6A754335-CBCB-46A3-9A03-9F76F250DA51}
+		{856FD21A-1552-4243-85E7-88D146D1330B} = {6A754335-CBCB-46A3-9A03-9F76F250DA51}
+		{E347DEBB-6E9C-4338-8709-9199343D030F} = {C5356F71-A0AF-4979-B2C8-84C54F07A132}
+		{E324CA37-9C6B-4A52-988F-15B34F07B63A} = {C43F5522-4590-4585-93E3-083E3211DE9D}
+		{E29D3D1F-9EE1-4531-9426-0AA28E97D1F9} = {95BBE1DA-FF80-4A7C-A19B-FA7BC8A0A40D}
+		{03F7166B-BF41-4D97-92B9-7CC9D338824B} = {36F9043C-A575-45B6-AB76-BEEA835B7356}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C7FA1F2-606C-4184-B792-3397A043430F}
+	EndGlobalSection
+EndGlobal

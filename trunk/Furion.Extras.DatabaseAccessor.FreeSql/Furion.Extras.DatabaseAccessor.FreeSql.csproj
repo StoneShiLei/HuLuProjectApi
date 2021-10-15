@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSql.Provider.MySql" Version="2.5.200" />
+    <PackageReference Include="FreeSql.Provider.SqlServerForSystem" Version="2.5.200" />
+    <PackageReference Include="FreeSql.Repository" Version="2.5.200" />
+    <PackageReference Include="IdleBus" Version="1.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Furion.Extras.DependencyModel.CodeAnalysis\Furion.Extras.DependencyModel.CodeAnalysis.csproj" />
+  </ItemGroup>
+
+</Project>

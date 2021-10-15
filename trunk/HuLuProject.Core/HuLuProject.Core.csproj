@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>HuLuProject.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Enums\**" />
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="Enums\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Enums\**" />
+    <None Remove="Views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="HuLuProject.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Furion.Extras.Authentication.JwtBearer\Furion.Extras.Authentication.JwtBearer.csproj" />
+    <ProjectReference Include="..\Furion.Extras.DatabaseAccessor.FreeSql\Furion.Extras.DatabaseAccessor.FreeSql.csproj" />
+    <ProjectReference Include="..\Furion.Extras.DatabaseAccessor.MongoDB\Furion.Extras.DatabaseAccessor.MongoDB.csproj" />
+    <ProjectReference Include="..\Furion.Extras.ObjectMapper.Mapster\Furion.Extras.ObjectMapper.Mapster.csproj" />
+    <ProjectReference Include="..\Furion\Furion.csproj" />
+  </ItemGroup>
+
+</Project>

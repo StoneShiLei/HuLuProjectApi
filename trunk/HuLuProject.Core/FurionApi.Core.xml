@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FurionApi.Core</name>
+    </assembly>
+    <members>
+        <member name="P:FurionApi.Core.Entities.DemoEntity.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="T:FurionApi.Core.Managers.BaseManager">
+            <summary>
+            Manager父类
+            </summary>
+        </member>
+        <member name="M:FurionApi.Core.Managers.BaseManager.#ctor">
+            <summary>
+            默认使用DefaultConn数据库
+            </summary>
+        </member>
+        <member name="M:FurionApi.Core.Managers.BaseManager.#ctor(System.String)">
+            <summary>
+            根据传入的key使用数据库
+            </summary>
+            <param name="connKey"></param>
+        </member>
+        <member name="M:FurionApi.Core.Managers.BaseManager.Change(System.String)">
+            <summary>
+            运行期间更改数据库
+            </summary>
+            <param name="connKey"></param>
+        </member>
+        <member name="T:FurionApi.Core.Universal.Container`1">
+            <summary>
+            分页容器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:FurionApi.Core.Universal.Container`1.Total">
+            <summary>
+            分页容器总数
+            </summary>
+        </member>
+        <member name="P:FurionApi.Core.Universal.Container`1.Items">
+            <summary>
+            分页列表
+            </summary>
+        </member>
+    </members>
+</doc>
