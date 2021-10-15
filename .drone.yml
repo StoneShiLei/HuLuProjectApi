@@ -1,16 +1,8 @@
 ﻿kind: pipeline
 type: kubernetes
 name: hulu-project
-# clone:
-#   disable: true
 
 steps:
-# - name: clone
-#   image: alpine/git
-#   commands:
-#   - git config --global http.version HTTP/1.1
-#   - git clone https://github.com/StoneShiLei/HuLuProjectApi.git .
-  # - git checkout $DRONE_COMMIT
 
 - name: docker-api
   image: plugins/docker
@@ -22,7 +14,6 @@ steps:
       from_secret: username
     password:
       from_secret: password
-    # repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
     repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
     registry: registry-vpc.cn-shanghai.aliyuncs.com
     tags:
