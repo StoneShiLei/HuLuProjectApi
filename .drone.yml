@@ -13,10 +13,11 @@ steps:
   # - git checkout $DRONE_COMMIT
 
 - name: docker-api
-  depends_on: [clone]
   image: plugins/docker
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
+    build_args:
+      - network=host
     username:
       from_secret: username
     password:
@@ -29,7 +30,6 @@ steps:
       - ${DRONE_COMMIT}
 
 - name: dron8s-api
-  depends_on: [docker-api]
   image: bh90210/dron8s:latest
   settings:
     yaml: ./deploy.yaml
