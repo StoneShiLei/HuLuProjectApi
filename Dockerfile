@@ -16,7 +16,7 @@ COPY ["trunk/Furion.Extras.DependencyModel.CodeAnalysis/Furion.Extras.Dependency
 COPY ["trunk/Furion/Furion.csproj", "Furion/"]
 COPY ["trunk/Furion.Extras.Authentication.JwtBearer/Furion.Extras.Authentication.JwtBearer.csproj", "Furion.Extras.Authentication.JwtBearer/"]
 COPY ["trunk/Furion.Extras.ObjectMapper.Mapster/Furion.Extras.ObjectMapper.Mapster.csproj", "Furion.Extras.ObjectMapper.Mapster/"]
-RUN dotnet restore "HuLuProject.Web.Entry/HuLuProject.Web.Api.csproj" -s https://api.nuget.org/v3/index.json
+RUN dotnet restore "HuLuProject.Web.Entry/HuLuProject.Web.Api.csproj"
 COPY . .
 WORKDIR "/src/trunk/HuLuProject.Web.Entry"
 RUN dotnet build "HuLuProject.Web.Api.csproj" -c Release -o /app/build
