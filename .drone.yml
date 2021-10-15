@@ -1,28 +1,4 @@
-﻿# ---
-# kind: pipeline
-# type: kubernetes
-# name: test1
-# clone:
-#   disable: true
-# steps:
-# - name: test
-#   image: plugins/docker
-#   environment:
-#     KUBECONFIG: 
-#       from_secret: kubeconfig
-#     TEST: ddd
-#     USERNAME:
-#       from_secret: username
-#     PASSWORD:
-#       from_secret: password
-#   commands:
-#   - echo $USERNAME
-#   - echo $PASSWORD
-#   - docker login --username=$USERNAME registry.cn-shanghai.aliyuncs.com --password=$PASSWORD
-
-
----
-kind: pipeline
+﻿kind: pipeline
 type: kubernetes
 name: hulu-project
 # clone:
