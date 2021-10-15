@@ -25,7 +25,6 @@
 kind: pipeline
 type: kubernetes
 name: hulu-project
-
 # clone:
 #   disable: true
 
