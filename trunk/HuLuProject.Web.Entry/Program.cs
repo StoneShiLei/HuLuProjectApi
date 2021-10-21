@@ -16,5 +16,6 @@ namespace HuLuProject.Web.Api
                 {
                     webBuilder.Inject().UseStartup<Startup>();
                 }).UseSerilogDefault();
+
     }
 }
