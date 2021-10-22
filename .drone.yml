@@ -6,6 +6,9 @@ steps:
 
 - name: docker-api
   image: plugins/docker
+    volumes: 
+    - name: docker
+      path: /var/run/docker.sock
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
     build_args:
@@ -28,6 +31,11 @@ steps:
     image_tag: ${DRONE_COMMIT}
     kubeconfig:
         from_secret: kubeconfig
+
+volumes: 
+  - name: docker
+    host:
+      path: /var/run/docker.sock
 
 ---
 kind: secret
