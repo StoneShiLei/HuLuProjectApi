@@ -37,6 +37,7 @@ volumes:
     host:
       path: /var/run/docker.sock
 
+
 ---
 kind: secret
 name: username
