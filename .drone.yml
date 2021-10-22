@@ -6,9 +6,7 @@ steps:
 
 - name: docker-api
   image: plugins/docker
-  # volumes: 
-  # - name: docker
-  #   path: /var/run
+
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
     username:
@@ -25,15 +23,9 @@ steps:
   image: bh90210/dron8s:latest
   settings:
     yaml: ./deploy.yaml
-    # variables. Must be lowercase, Usage: {{.image_tag}}
     image_tag: ${DRONE_COMMIT}
     kubeconfig:
         from_secret: kubeconfig
-
-# volumes: 
-#   - name: docker
-#     host:
-#       path: /var/run
 
 
 ---
