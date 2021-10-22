@@ -6,9 +6,9 @@ steps:
 
 - name: docker-api
   image: plugins/docker
-    volumes: 
-    - name: docker
-      path: /var/run/docker.sock
+  volumes: 
+  - name: docker
+    path: /var/run/docker.sock
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
     build_args:
