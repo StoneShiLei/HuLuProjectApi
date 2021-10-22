@@ -3,21 +3,6 @@ type: kubernetes
 name: hulu-project
 
 steps:
-- name: restore-cache-with-filesystem
-  image: meltwater/drone-cache
-  pull: true
-  settings:
-    backend: "filesystem"
-    restore: true
-    cache_key: "hulu-project"
-    archive_format: "gzip"
-    # filesystem_cache_root: "/tmp/cache"
-    mount:
-      - '/var/lib/docker'
-  volumes:
-  - name: cache
-    path: /tmp/cache
-
 - name: docker-api
   image: plugins/docker
   settings:
@@ -28,6 +13,7 @@ steps:
       from_secret: password
     repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
     registry: registry-vpc.cn-shanghai.aliyuncs.com
+    cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
     tags:
       - latest
       - ${DRONE_COMMIT}
@@ -39,26 +25,6 @@ steps:
     image_tag: ${DRONE_COMMIT}
     kubeconfig:
         from_secret: kubeconfig
-
-- name: rebuild-cache-with-filesystem
-  image: meltwater/drone-cache
-  pull: true
-  settings:
-    backend: "filesystem"
-    rebuild: true
-    cache_key: "hulu-project"
-    archive_format: "gzip"
-    # filesystem_cache_root: "/tmp/cache"
-    mount:
-      - '/var/lib/docker'
-  volumes:
-  - name: cache
-    path: /tmp/cache
-
-volumes:
-  - name: cache
-    host:
-      path: /mnt/cache
 
 ---
 kind: secret
