@@ -11,7 +11,7 @@ jobs:
         with:
           originalURL: https://github.com/StoneShiLei/HuLuProjectApi.git
           originalBranch: master
-          mirrorURL: http://gitea.hafuhafu.cn/StoneShiLei/HuLuProjectApi.git
+          mirrorURL: https://gitea.hafuhafu.cn/StoneShiLei/HuLuProjectApi.git
           mirrorBranch: master
           verbose: true
           force: true
