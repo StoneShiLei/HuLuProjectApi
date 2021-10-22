@@ -15,11 +15,10 @@ steps:
     registry: registry-vpc.cn-shanghai.aliyuncs.com
     target: build
     cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:build
-    dry_run: true
     tags:
       - build
 
-      
+
 - name: docker-final
   image: plugins/docker
   settings:
