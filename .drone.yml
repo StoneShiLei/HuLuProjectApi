@@ -6,9 +6,9 @@ steps:
 
 - name: docker-api
   image: plugins/docker
-  volumes: 
-  - name: docker
-    path: /var/run
+  # volumes: 
+  # - name: docker
+  #   path: /var/run
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
     username:
@@ -30,10 +30,10 @@ steps:
     kubeconfig:
         from_secret: kubeconfig
 
-volumes: 
-  - name: docker
-    host:
-      path: /var/run
+# volumes: 
+#   - name: docker
+#     host:
+#       path: /var/run
 
 
 ---
