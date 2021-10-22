@@ -8,7 +8,7 @@ steps:
   image: plugins/docker
   volumes: 
   - name: docker
-    path: /var/run/docker.sock
+    path: /var/run/
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
     build_args:
@@ -35,7 +35,7 @@ steps:
 volumes: 
   - name: docker
     host:
-      path: /run/docker.sock
+      path: /var/run/
 
 
 ---
