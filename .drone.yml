@@ -19,6 +19,7 @@ steps:
     tags:
       - build
 
+      
 - name: docker-final
   image: plugins/docker
   settings:
