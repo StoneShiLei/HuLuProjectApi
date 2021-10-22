@@ -3,7 +3,7 @@ type: kubernetes
 name: hulu-project
 
 steps:
-- name: docker-api
+- name: docker-build
   image: plugins/docker
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
@@ -13,7 +13,25 @@ steps:
       from_secret: password
     repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
     registry: registry-vpc.cn-shanghai.aliyuncs.com
-    cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
+    target: build
+    cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:build
+    dry_run: true
+    tags:
+      - build
+
+- name: docker-final
+  image: plugins/docker
+  settings:
+    mirror: https://jnyis2wm.mirror.aliyuncs.com
+    username:
+      from_secret: username
+    password:
+      from_secret: password
+    repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
+    registry: registry-vpc.cn-shanghai.aliyuncs.com
+    cache_from: 
+      - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:build
+      - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
     tags:
       - latest
       - ${DRONE_COMMIT}
