@@ -3,7 +3,7 @@ type: kubernetes
 name: hulu-project
 
 steps:
-- name: docker-build
+- name: docker-restore
   image: plugins/docker
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
@@ -13,10 +13,10 @@ steps:
       from_secret: password
     repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
     registry: registry-vpc.cn-shanghai.aliyuncs.com
-    target: build
-    cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:build
+    target: restore
+    cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:restore
     tags:
-      - build
+      - restore
 
 
 - name: docker-final
@@ -30,7 +30,7 @@ steps:
     repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
     registry: registry-vpc.cn-shanghai.aliyuncs.com
     cache_from: 
-      - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:build
+      - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:restore
       - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
     tags:
       - latest
