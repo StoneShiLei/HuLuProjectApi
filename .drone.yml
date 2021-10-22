@@ -31,7 +31,7 @@ steps:
     registry: registry-vpc.cn-shanghai.aliyuncs.com
     cache_from: 
       - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:restore
-      # - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
+      - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
     tags:
       - latest
       - ${DRONE_COMMIT}
