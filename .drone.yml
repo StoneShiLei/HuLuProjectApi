@@ -11,8 +11,6 @@ steps:
     path: /var/run/
   settings:
     mirror: https://jnyis2wm.mirror.aliyuncs.com
-    build_args:
-      - network=host
     username:
       from_secret: username
     password:
