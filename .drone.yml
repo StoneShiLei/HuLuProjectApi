@@ -13,7 +13,7 @@ steps:
       from_secret: password
     repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
     registry: registry-vpc.cn-shanghai.aliyuncs.com
-    cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
+    # cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
     tags:
       - latest
       - ${DRONE_COMMIT}
