@@ -18,12 +18,12 @@ COPY ["trunk/Furion.Extras.Authentication.JwtBearer/Furion.Extras.Authentication
 COPY ["trunk/Furion.Extras.ObjectMapper.Mapster/Furion.Extras.ObjectMapper.Mapster.csproj", "Furion.Extras.ObjectMapper.Mapster/"]
 RUN dotnet restore "HuLuProject.Web.Entry/HuLuProject.Web.Api.csproj"
 
-FROM restore AS build
+# FROM restore AS build
 COPY . .
 WORKDIR "/src/trunk/HuLuProject.Web.Entry"
 RUN dotnet build "HuLuProject.Web.Api.csproj" -c Release -o /app/build
 
-FROM build AS publish
+FROM restore AS publish
 RUN dotnet publish "HuLuProject.Web.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
