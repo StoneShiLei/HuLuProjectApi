@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS restore
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["trunk/HuLuProject.Web.Entry/HuLuProject.Web.Api.csproj", "HuLuProject.Web.Entry/"]
 COPY ["trunk/HuLuProject.Web.Core/HuLuProject.Web.Core.csproj", "HuLuProject.Web.Core/"]
@@ -18,12 +18,11 @@ COPY ["trunk/Furion.Extras.Authentication.JwtBearer/Furion.Extras.Authentication
 COPY ["trunk/Furion.Extras.ObjectMapper.Mapster/Furion.Extras.ObjectMapper.Mapster.csproj", "Furion.Extras.ObjectMapper.Mapster/"]
 RUN dotnet restore "HuLuProject.Web.Entry/HuLuProject.Web.Api.csproj"
 
-# FROM restore AS build
 COPY . .
 WORKDIR "/src/trunk/HuLuProject.Web.Entry"
 RUN dotnet build "HuLuProject.Web.Api.csproj" -c Release -o /app/build
 
-FROM restore AS publish
+FROM build AS publish
 RUN dotnet publish "HuLuProject.Web.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
