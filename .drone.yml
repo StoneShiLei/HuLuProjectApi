@@ -1,4 +1,4 @@
-﻿kind: pipeline
+kind: pipeline
 type: kubernetes
 name: hulu-project
 
@@ -6,15 +6,10 @@ steps:
 - name: docker-build
   image: plugins/docker
   settings:
-    mirror: https://jnyis2wm.mirror.aliyuncs.com
-    username:
-      from_secret: username
-    password:
-      from_secret: password
-    repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
-    registry: registry-vpc.cn-shanghai.aliyuncs.com
+    repo: repo.internal.hafuhafu.cn/hulu0811/huluproject-api
+    registry: repo.internal.hafuhafu.cn
     target: build
-    cache_from: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:build
+    cache_from: repo.internal.hafuhafu.cn/hulu0811/huluproject-api:build
     tags:
       - build
 
@@ -22,16 +17,11 @@ steps:
 - name: docker-final
   image: plugins/docker
   settings:
-    mirror: https://jnyis2wm.mirror.aliyuncs.com
-    username:
-      from_secret: username
-    password:
-      from_secret: password
-    repo: registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api
-    registry: registry-vpc.cn-shanghai.aliyuncs.com
+    repo: repo.internal.hafuhafu.cn/hulu0811/huluproject-api
+    registry: repo.internal.hafuhafu.cn
     cache_from: 
-      - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:build
-      - registry-vpc.cn-shanghai.aliyuncs.com/hulu0811/huluproject-api:latest
+      - repo.internal.hafuhafu.cn/hulu0811/huluproject-api:build
+      - repo.internal.hafuhafu.cn/hulu0811/huluproject-api:latest
     tags:
       - latest
       - ${DRONE_COMMIT}
@@ -43,24 +33,3 @@ steps:
     image_tag: ${DRONE_COMMIT}
     kubeconfig:
         from_secret: kubeconfig
-
----
-kind: secret
-name: username
-get:
-  path: docker-secret
-  name: DOCKER_USERNAME
-
----
-kind: secret
-name: password
-get:
-  path: docker-secret
-  name: DOCKER_PASSWORD
-
----
-kind: secret
-name: kubeconfig
-get:
-  path: kubeconfig
-  name: KUBECONFIG
